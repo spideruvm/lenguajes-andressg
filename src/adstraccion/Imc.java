@@ -14,11 +14,14 @@ public class Imc {
     private float peso;
     private float altura;
     private boolean flaco;
+
+    public Imc() {
+    }
         
         public void setFlaco(boolean flaco){
             this.flaco=flaco;
         }
-        public boolean getFlaco{
+        public boolean getFlaco(){
             return flaco;
         }
         public void setPeso(float peso){
@@ -31,13 +34,9 @@ public class Imc {
         peso=p;
         altura=a;
         }
-        
-)
-
- 
-    public String calcular(){
+        public float calcular(){
         float imc=peso/(altura*altura);
-        return "Tu imc es: "+imc;
+        return  imc;
     }
 
 }
