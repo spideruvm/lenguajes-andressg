@@ -54,6 +54,11 @@ public class imcVisual extends javax.swing.JFrame {
         });
 
         textoAltura.setText("85");
+        textoAltura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textoAlturaActionPerformed(evt);
+            }
+        });
 
         botonCalcular.setText("CALCULO IMC");
         botonCalcular.addActionListener(new java.awt.event.ActionListener() {
@@ -137,6 +142,10 @@ public class imcVisual extends javax.swing.JFrame {
         Imc nose=new Imc(peso, altura);
         resultado.setText(" "+ nose.calcular());
     }//GEN-LAST:event_botonCalcularActionPerformed
+
+    private void textoAlturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoAlturaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textoAlturaActionPerformed
 
     /**
      * @param args the command line arguments
