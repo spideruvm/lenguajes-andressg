@@ -26,6 +26,9 @@ public class Chapultepec {
         Leon animal2=new Leon();
             animal2.setNombre("africano");
             animal2.setEdad(20);
+        Delfin animal3=new Delfin();
+            animal3.setNombre("chino");
+            animal3.setEdad(21);
     }
     
 }
