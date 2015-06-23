@@ -3,24 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package encapsulamiento;
+package encapsulamiento2;
 
 /**
  *
  * @author T-107
  */
-public class ProbarEncapsulamiento {
-    
+public class Antro {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        Usuario u1=new Usuario();
-        int edad = 0;
-        u1.setEdad(edad);
-        System.out.print("");
+        //Direccion d1=new Direccion(5513,"ecatepec");
+     Usuario u =new Usuario("juan",43,"jcampos@gmail",new Direccion(55130,"ecatepec"));
+     //impime municipio con invocacion
+        System.out.println(u.getDireccion().getMunicipio());
+      
     }
     
 }
