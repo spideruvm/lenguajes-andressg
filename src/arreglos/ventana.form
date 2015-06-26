@@ -51,12 +51,10 @@
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="salidaT" pref="273" max="32767" attributes="0"/>
                       <Component id="retransformarB" min="-2" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="salidaByte" pref="273" max="32767" attributes="0"/>
-                          <Component id="transformarB" min="-2" max="-2" attributes="0"/>
-                          <Component id="introduceT" max="32767" attributes="0"/>
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="salidaByte" pref="273" max="32767" attributes="0"/>
+                      <Component id="transformarB" min="-2" max="-2" attributes="0"/>
+                      <Component id="introduceT" max="32767" attributes="0"/>
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="102" max="32767" attributes="0"/>
               </Group>

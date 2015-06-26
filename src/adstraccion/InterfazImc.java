@@ -34,7 +34,7 @@ public class InterfazImc {
        
        Imc otro=new Imc();
        otro.setFlaco(true);
-       System.out.println(otro.isFlaco());
+      
    } 
 }
 

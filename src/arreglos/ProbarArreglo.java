@@ -38,7 +38,7 @@ public class ProbarArreglo {
         for(byte valor:algo){
             builder.append((char)valor);
         }
-        salidaT.setText(builder.toString());
+  
         
     }
     

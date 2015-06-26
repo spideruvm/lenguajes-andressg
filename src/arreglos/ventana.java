@@ -125,9 +125,7 @@ public class ventana extends javax.swing.JFrame {
         }
         */
         StringBuilder builder=new StringBuilder();
-        for(byte valor:introduceT){
-            builder.append((char)valor);
-        salidaT.setText(builder.toString());
+        
     }//GEN-LAST:event_transformarBActionPerformed
 
     /**

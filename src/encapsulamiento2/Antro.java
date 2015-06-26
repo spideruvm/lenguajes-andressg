@@ -19,6 +19,14 @@ public class Antro {
      Usuario u =new Usuario("juan",43,"jcampos@gmail",new Direccion(55130,"ecatepec"));
      //impime municipio con invocacion
         System.out.println(u.getDireccion().getMunicipio());
+        //UsuarioMayor mayor=new UsuarioMayor();
+        
+        Bebidas bebida=new Bebidas();
+        bebida.setTipo("alcoholicas");
+        String []reco=bebida.obtenerRecomendaciones();
+        for(String be:reco){
+            System.out.println("Bebida "+be);
+        }
       
     }
     
