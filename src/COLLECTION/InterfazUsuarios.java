@@ -5,6 +5,10 @@
  */
 package COLLECTION;
 
+import java.util.Collections;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author T-107
@@ -103,12 +107,14 @@ public class InterfazUsuarios extends javax.swing.JFrame {
         jTabbedPane2.addTab("AGREGAR USUARIO", jPanel2);
 
         botonCargarUsuarios.setText("CARGAR USUARIOS");
+        botonCargarUsuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonCargarUsuariosActionPerformed(evt);
+            }
+        });
 
         tablaUsuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
                 {null, null, null}
             },
             new String [] {
@@ -137,8 +143,8 @@ public class InterfazUsuarios extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(botonCargarUsuarios)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(124, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(73, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("MOSTRAR USUARIOS", jPanel1);
@@ -162,6 +168,22 @@ public class InterfazUsuarios extends javax.swing.JFrame {
     private void textoNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoNombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textoNombreActionPerformed
+
+    private void botonCargarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCargarUsuariosActionPerformed
+        // TODO add your handling code here:
+        GeneradorDeUsuarios gen=new GeneradorDeUsuarios();
+        List<Usuario> usuarios= gen.getUsuarios();
+        Collections.sort(usuarios, new UsuarioPorNombre());
+        tablaUsuarios.setModel(new DefaultTableModel(new String[]{"nombe","edad","email"}, gen.getUsuarios().size()));
+        //encadenamiento por metodo "chaining"
+        int fila=0;
+        for(Usuario u:usuarios){
+            tablaUsuarios.setValueAt(u.getNombre(), fila, 0);
+            tablaUsuarios.setValueAt(u.getEdad(), fila, 1);
+            tablaUsuarios.setValueAt(u.getEmail(), fila, 2);
+            fila++;
+        }
+    }//GEN-LAST:event_botonCargarUsuariosActionPerformed
 
     /**
      * @param args the command line arguments
