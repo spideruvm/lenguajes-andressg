@@ -20,6 +20,7 @@ public class InterfazUsuarios extends javax.swing.JFrame {
      */
     public InterfazUsuarios() {
         initComponents();
+        botonCargarUsuarios.setEnabled(false);//desabilita el boton
     }
 
     /**
@@ -44,6 +45,7 @@ public class InterfazUsuarios extends javax.swing.JFrame {
         botonCargarUsuarios = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaUsuarios = new javax.swing.JTable();
+        comboSeleccion = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -123,6 +125,14 @@ public class InterfazUsuarios extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tablaUsuarios);
 
+        comboSeleccion.setFont(new java.awt.Font("Brush Script MT", 1, 18)); // NOI18N
+        comboSeleccion.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Ordenar por Nombre", "Ordenar por Edad" }));
+        comboSeleccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboSeleccionActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -131,7 +141,9 @@ public class InterfazUsuarios extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(botonCargarUsuarios))
+                        .addComponent(botonCargarUsuarios)
+                        .addGap(18, 18, 18)
+                        .addComponent(comboSeleccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 428, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -141,10 +153,12 @@ public class InterfazUsuarios extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(botonCargarUsuarios)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botonCargarUsuarios)
+                    .addComponent(comboSeleccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("MOSTRAR USUARIOS", jPanel1);
@@ -173,7 +187,8 @@ public class InterfazUsuarios extends javax.swing.JFrame {
         // TODO add your handling code here:
         GeneradorDeUsuarios gen=new GeneradorDeUsuarios();
         List<Usuario> usuarios= gen.getUsuarios();
-        Collections.sort(usuarios, new UsuarioPorNombre());
+        //Collections.sort(usuarios, new UsuarioPorNombre());
+        Collections.sort(usuarios, new UsuarioPorEdad());
         tablaUsuarios.setModel(new DefaultTableModel(new String[]{"nombe","edad","email"}, gen.getUsuarios().size()));
         //encadenamiento por metodo "chaining"
         int fila=0;
@@ -184,6 +199,12 @@ public class InterfazUsuarios extends javax.swing.JFrame {
             fila++;
         }
     }//GEN-LAST:event_botonCargarUsuariosActionPerformed
+
+    private void comboSeleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboSeleccionActionPerformed
+        // TODO add your handling code here:
+        botonCargarUsuarios.setEnabled(true);
+        int indice= comboSeleccion.getSelectedIndex();//0 para nombre y 1 parqa edad
+    }//GEN-LAST:event_comboSeleccionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -223,6 +244,7 @@ public class InterfazUsuarios extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonCargarUsuarios;
     private javax.swing.JButton botonGuardar;
+    private javax.swing.JComboBox comboSeleccion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

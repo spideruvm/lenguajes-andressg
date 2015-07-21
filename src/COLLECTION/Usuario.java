@@ -11,7 +11,7 @@ package COLLECTION;
  */
 public class Usuario {
     String nombre;
-    int edad;
+    Integer edad;//convierte el dato primitivo a referenciado.
     String email;
 
     public Usuario(String nombre, int edad, String email) {
@@ -29,11 +29,11 @@ public class Usuario {
         this.nombre = nombre;
     }
 
-    public int getEdad() {
+    public Integer getEdad() {
         return edad;
     }
 
-    public void setEdad(int edad) {
+    public void setEdad(Integer edad) {
         this.edad = edad;
     }
 
