@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 public class InterfazCompresora {
     public static void main(String[] args){
         Animal a=new Animal();
-        a.setNombre("leon");
+        a.setNombre("osos");
         a.setCarnivoro(true);
         ModeloPersistenciaAnimal modelo=new ModeloPersistenciaAnimal();
         try {
